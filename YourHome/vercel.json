@@ -1,0 +1,39 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "src/**/*",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "assets/**/*",
+      "use": "@vercel/static"
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/src/app/pages/home_page.html"
+    },
+    {
+      "source": "/assets/:path*",
+      "destination": "/assets/:path*"
+    },
+    {
+      "source": "/styles/:path*",
+      "destination": "/src/app/styles/:path*"
+    },
+    {
+      "source": "/js/:path*",
+      "destination": "/src/app/js/:path*"
+    },
+    {
+      "source": "/:path.html",
+      "destination": "/src/app/pages/:path.html"
+    },
+    {
+      "source": "/:path*",
+      "destination": "/src/app/pages/:path*"
+    }
+  ]
+} 
